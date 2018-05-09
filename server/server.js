@@ -1,4 +1,3 @@
-'use strict';
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -15,7 +14,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', (socket) => {
         console.log('user disconnected');
     });
-    
+
     //get new message from client
     socket.on('createMessage', (message) => {
         console.log("message received from user");
@@ -28,11 +27,7 @@ io.on('connection', (socket) => {
     });
 });
 
-
-
-
 app.use(express.static(publicPath));
-
 
 server.listen(port, () => {
     console.log(`node server started at port ${port}`);
